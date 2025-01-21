@@ -176,7 +176,7 @@
                         </div>
                     @empty
                         <tr>
-                            <td colspan="5" class="text-center">
+                            <td colspan="6" class="text-center">
                                 <div class="d-flex justify-content-center align-items-center my-2">
                                     <i class="mdi mdi-alert-circle-outline me-2" style="font-size: 20px;"></i>
                                     <span class="fs-8">Tidak ada jadwal latihan yang tersedia saat ini.</span>

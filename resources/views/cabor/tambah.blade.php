@@ -42,8 +42,10 @@
         ***********************************-->
         <div class="nav-header">
             <a href="/coba" class="brand-logo">
-                <img class="logo-abbr" src="{{ asset('gambar_aset/images/koni.png') }}" alt="" style="margin-left: 10px; border-radius: 50%;">
-                <span class="fw-bolder d-none d-md-inline" style="margin-left: 10px; font-size: 18px; font-weight: 300">Sistem Kelola KONI</span>
+                <img class="logo-abbr" src="{{ asset('gambar_aset/images/koni.png') }}" alt=""
+                    style="margin-left: 10px; border-radius: 50%;">
+                <span class="fw-bolder d-none d-md-inline"
+                    style="margin-left: 10px; font-size: 18px; font-weight: 300">Sistem Kelola KONI</span>
             </a>
 
             <div class="nav-control">
@@ -81,7 +83,8 @@
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4>Hi, Selamat Datang kembali!</h4>
-                            <p class="mb-1"><span class="text-success">{{ Auth::user()->name }},</span> Anda login sebagai <span class="text-success">{{ Auth::user()->level }}</span></p>
+                            <p class="mb-1"><span class="text-success">{{ Auth::user()->name }},</span> Anda login
+                                sebagai <span class="text-success">{{ Auth::user()->level }}</span></p>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -104,15 +107,17 @@
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="nama_cabor">Nama Federasi</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="nama_cabor" class="form-control" placeholder="Masukkan nama kategori olahraga..." required />
+                                            <input type="text" name="nama_cabor" class="form-control"
+                                                placeholder="Masukkan nama kategori olahraga..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="cabor" class="col-sm-2 col-form-label">Nama Cabor</label>
                                         <div class="col-sm-8">
-                                            <input type="text" name="sport_category" class="form-control" placeholder="Tulis nama cabor (ex : Sepak Bola)" />
+                                            <input type="text" name="sport_category" class="form-control"
+                                                placeholder="Tulis nama cabor (ex : Sepak Bola)" />
                                         </div>
-                                      </div>
+                                    </div>
                                     <div class="row mb-3">
                                         <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                                         <div class="col-sm-10">
@@ -120,21 +125,25 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="puslatcab" class="col-sm-2 col-form-label">Pusat Latihan Cabang</label>
+                                        <label for="puslatcab" class="col-sm-2 col-form-label">Pusat Latihan
+                                            Cabang</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="puslatcab" class="form-control" placeholder="Masukkan pusat latihan cabang..." />
+                                            <input type="text" name="puslatcab" class="form-control"
+                                                placeholder="Masukkan pusat latihan cabang..." />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="kontak" class="col-sm-2 col-form-label">Kontak</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="kontak" class="form-control" placeholder="Masukkan kontak (nomor telepon/email)..." />
+                                            <input type="text" name="kontak" class="form-control"
+                                                placeholder="Masukkan kontak (nomor telepon/email)..." />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="level" class="col-sm-2 col-form-label">Level</label>
                                         <div class="col-sm-4">
-                                            <input type="text" name="level" class="form-control" placeholder="ex : Pengurus Cabor Sepakbola" />
+                                            <input type="text" name="level" class="form-control"
+                                                placeholder="ex : Pengurus Cabor Sepakbola" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -149,7 +158,8 @@
                                     </div>
                                     <div class="row justify-content-end">
                                         <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-primary">Tambah Kategori Olahraga</button>
+                                            <button type="submit" class="btn btn-primary">Tambah Kategori
+                                                Olahraga</button>
                                         </div>
                                     </div>
                                 </form>
@@ -157,9 +167,9 @@
                         </div>
                     </div>
                 </div>
-                
-                
-                
+
+
+
                 <!--**********************************
                     Content body end
                 ***********************************-->

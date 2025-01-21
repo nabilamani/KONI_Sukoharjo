@@ -102,29 +102,38 @@
                                 <h5 class="mb-0">Tambah Data Struktural KONI</h5>
                             </div>
                             <div class="card-body">
+                                @if (session('error'))
+                                    <div class="alert alert-danger">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
+
                                 <form action="/konistructures" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="title">Judul Struktural</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="title" class="form-control" placeholder="Masukkan judul struktural..." required />
+                                            <input type="text" name="title" class="form-control"
+                                                placeholder="Masukkan judul struktural..." required />
                                         </div>
                                     </div>
-                                
+
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="period">Periode</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="period" class="form-control" placeholder="Masukkan periode, contoh: 2021-2025" required />
+                                            <input type="text" name="period" class="form-control"
+                                                placeholder="Masukkan periode, contoh: 2021-2025" required />
                                         </div>
                                     </div>
-                                
+
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="description">Deskripsi</label>
                                         <div class="col-sm-10">
-                                            <textarea name="description" class="form-control" rows="4" placeholder="Masukkan deskripsi struktural..." required></textarea>
+                                            <textarea name="description" class="form-control" rows="4" placeholder="Masukkan deskripsi struktural..."
+                                                required></textarea>
                                         </div>
                                     </div>
-                                
+
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="gambar">Foto</label>
                                         <div class="col-sm-4">
@@ -135,7 +144,7 @@
                                                 style="max-height: 200px; border: 1px solid #ddd; padding: 5px;" />
                                         </div>
                                     </div>
-                                
+
                                     <div class="row justify-content-end">
                                         <div class="col-sm-10">
                                             <button type="submit" class="btn btn-primary">Tambah Struktural</button>
@@ -155,6 +164,7 @@
 
             </div>
         </div>
+        @include('layouts/footer')
         <!--**********************************
             Main wrapper end
         ***********************************-->

@@ -225,7 +225,8 @@
                         <th>Nama Atlet</th>
                         <th>Cabang Olahraga</th>
                         <th>Format</th>
-                        <th>Deskripsi</th>
+                        <th>Rank</th>
+                        <th>Tingkat Wilayah</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -239,7 +240,8 @@
                             <td>{{ $achievement->athlete_name }}</td>
                             <td>{{ $achievement->SportCategory->sport_category }}</td>
                             <td>{{ $achievement->event_type }}</td>
-                            <td>{{ Str::limit($achievement->description, 50) }}</td>
+                            <td>{{ $achievement->rank }}</td>
+                            <td>{{ $achievement->region_level }}</td>
                             <td>
                                 <a href="#" class="btn btn-primary btn-sm" data-toggle="modal"
                                     data-target="#achievementDetailModal{{ $achievement->id }}">Detail</a>

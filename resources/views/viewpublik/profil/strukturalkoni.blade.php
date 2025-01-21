@@ -175,7 +175,7 @@
                 <span class="breadcrumb-item active text-primary">Profil</span>
                 <span class="breadcrumb-item active text-primary">Struktural Koni</span>
             </nav>
-            @foreach ($strukturals as $struktur)
+            @forelse ($strukturals as $struktur)
                 <div class="card shadow-sm border-0 rounded-4" data-aos="zoom-in">
                     <div class="card-body text-center p-0">
                         <!-- Full Image Section -->
@@ -191,7 +191,14 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <div class="alert alert-warning text-center p-4">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <i class="mdi mdi-emoticon-sad me-2 text-dark" style="font-size: 30px;"></i>
+                        <span class="fs-6 text-dark">Maaf, saat ini belum ada data struktural KONI</span>
+                    </div>
+                </div>
+            @endforelse
         </div>
     </section>
 
@@ -210,27 +217,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-{{-- <h2 class="fw-bold mb-4">Struktural Terakhir Ditambahkan</h2>
-            
-                    @if ($lastStructure)
-                        <img 
-                            src="{{ asset($lastStructure->photo) }}" 
-                            alt="{{ $lastStructure->name }}" 
-                            class="img-fluid rounded-4 shadow-sm mb-4"
-                            style="max-width: 100%; height: auto;"
-                        >
-                        <h5 class="fw-bold">{{ $lastStructure->name }}</h5>
-                        <p>{{ $lastStructure->position }}</p>
-                        <p>Umur: {{ $lastStructure->age }} tahun</p>
-                        <p>Tanggal Lahir: {{ \Carbon\Carbon::parse($lastStructure->birth_date)->format('d M Y') }}</p>
-                        <p>Jenis Kelamin: {{ $lastStructure->gender }}</p>
-                    @else
-                        <p>Belum ada data struktural yang ditambahkan.</p>
-                    @endif --}}

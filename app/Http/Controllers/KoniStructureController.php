@@ -48,6 +48,13 @@ class KoniStructureController extends Controller
             'description' => 'nullable|string',
         ]);
 
+        // Cek apakah sudah ada data dalam tabel
+        $exists = KoniStructures::exists();
+
+        if ($exists) {
+            return redirect()->route('konistructures.create')->with('error', 'Data struktural KONI sudah ada. Anda tidak dapat menambahkan data baru.');
+        }
+
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $filename = time() . '_' . Str::slug($file->getClientOriginalName());

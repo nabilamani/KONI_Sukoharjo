@@ -127,11 +127,11 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>ID</th>
                     <th>Cabang Olahraga</th>
                     <th>Nama Atlet</th>
                     <th>Jenis Event</th>
-                    <th>Deskripsi</th>
+                    <th>Rangking</th>
+                    <th>Tingkat Wilayah</th>
                     <th>Tanggal Piagam</th>
                 </tr>
             </thead>
@@ -139,11 +139,11 @@
                 @foreach ($achievements as $index => $achievement)
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td>{{ $achievement->id }}</td>
                         <td>{{ $achievement->SportCategory->sport_category }}</td>
                         <td>{{ $achievement->athlete_name }}</td>
                         <td>{{ $achievement->event_type }}</td>
-                        <td>{{ $achievement->description }}</td>
+                        <td>{{ $achievement->rank }}</td>
+                        <td>{{ $achievement->region_level }}</td>
                         <td>{{ $achievement->certificate_date }}</td>
                     </tr>
                 @endforeach

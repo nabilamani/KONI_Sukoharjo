@@ -136,17 +136,17 @@
 
                                     <!-- Lokasi Peta (iframe) -->
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="location_map">Peta
-                                            (iframe)</label>
+                                        <label class="col-sm-2 col-form-label" for="location_map">Peta (iframe)</label>
                                         <div class="col-sm-10">
-                                            <textarea name="location_map" class="form-control" placeholder="Masukkan iframe peta..." required></textarea>
+                                            <textarea id="location_map" name="location_map" class="form-control" placeholder="Masukkan URL src peta Google Maps..." required></textarea>
                                             <small class="form-text text-muted">
-                                                Masukkan kode iframe dari Google Maps.
-                                                <a href="https://www.google.com/maps" target="_blank"
-                                                    class="text-primary">Buka Google Maps</a> untuk mendapatkan iframe.
+                                                Masukkan hanya URL <code>src</code> dari iframe Google Maps. 
+                                                <a href="https://www.google.com/maps" target="_blank" class="text-primary">Buka Google Maps</a> untuk mendapatkan URL.
+                                                <br> Contoh: <code>https://www.google.com/maps/embed?pb=...</code>
                                             </small>
                                         </div>
                                     </div>
+                                    
 
 
                                     <div class="row justify-content-end">

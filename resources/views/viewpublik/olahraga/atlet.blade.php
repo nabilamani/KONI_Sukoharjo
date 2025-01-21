@@ -522,13 +522,13 @@
     <script>
         AOS.init();
     </script>
-    <script>
+    {{-- <script>
         document.getElementById('table-wrapper').addEventListener('htmx:afterSwap', function(event) {
             const responseUrl = event.detail.pathInfo.responsePath;
             const nextUrl = responseUrl.replace('/api/cari-atlet', '/olahraga/atlet');
             history.pushState(null, '', nextUrl);
         });
-    </script>
+    </script> --}}
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>

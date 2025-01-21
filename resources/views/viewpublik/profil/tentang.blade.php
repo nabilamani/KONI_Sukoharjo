@@ -143,8 +143,11 @@
                     <div class="row align-items-center">
                         <!-- Image Section -->
                         <div class="col-md-4 text-center mb-4 mb-md-0">
-                            <img src="https://via.placeholder.com/250x300" alt="Ketua KONI Sukoharjo" class="img-fluid rounded shadow">
+                            <div style="width: 250px; height: 300px; overflow: hidden; margin: auto;">
+                                <img src="/gambar_aset/images/foto profil.jpeg" alt="Ketua KONI Sukoharjo" class="img-fluid rounded shadow" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
                         </div>
+                        
             
                         <!-- Content Section -->
                         <div class="col-md-8">

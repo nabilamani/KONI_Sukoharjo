@@ -754,35 +754,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- <!-- Modal for Sending Message -->
-        <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="messageModalLabel">Kirim Pesan</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form id="contactForm">
-                  <div class="mb-3">
-                    <label for="name" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda">
-                  </div>
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda">
-                  </div>
-                  <div class="mb-3">
-                    <label for="message" class="form-label">Pesan</label>
-                    <textarea class="form-control" id="message" rows="3" placeholder="Tulis pesan Anda"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Kirim</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div> --}}
     </section>
 
 
@@ -817,7 +788,7 @@
             });
         });
     </script>
-    <script>
+    {{-- <script>
         document.querySelector('.scroll-to-section').addEventListener('click', function(e) {
             e.preventDefault(); // Mencegah aksi default anchor
             const target = document.querySelector('#about-section');
@@ -826,7 +797,7 @@
                 block: 'start' // Mulai scroll ke bagian atas target
             });
         });
-    </script>
+    </script> --}}
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();

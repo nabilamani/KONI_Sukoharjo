@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('gambar_aset/images/koni.png') }}">
     <title>Login Page</title>
-    <!-- Tambahkan di dalam <head> -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Tambahkan sebelum tag penutup </body> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
@@ -20,7 +17,7 @@
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, yellow, #E00818);
-            background-size: 400% 400%;
+            background-size: 200% 200%;
             animation: gradientAnimation 8s ease infinite;
             display: flex;
             justify-content: center;
@@ -28,7 +25,6 @@
             height: 100vh;
             margin: 0;
         }
-
         @keyframes gradientAnimation {
             0% {
                 background-position: 0% 50%;
@@ -44,175 +40,118 @@
         }
 
         .login-container {
-            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .login-left {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
+        }
+
+        .login-right {
             padding: 40px;
-            border-radius: 40px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
         }
-
-        .login-container h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            text-align: center;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #555;
-        }
-
-        .form-group input {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
+        .login-right label,input{
             font-size: 14px;
         }
 
-        .form-group input:focus {
-            outline: none;
-            border-color: #4A90E2;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .checkbox-group input {
-            margin-right: 10px;
-        }
-
-        .checkbox-group label {
-            font-size: 14px;
-            color: #555;
-        }
-
-        .forgot-password {
-            text-align: right;
-            margin-bottom: 20px;
-        }
-
-        .forgot-password a {
-            font-size: 14px;
-            color: #4A90E2;
-            text-decoration: none;
-        }
-
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
-
-        .btn-login {
-            background-color: #4A90E2;
-            color: white;
+        .btn-primary {
+            background-color: #E53935;
             border: none;
-            padding: 10px 20px;
-            width: 100%;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
         }
 
-        .btn-login:hover {
-            background-color: #3B7BCD;
+        .btn-primary:hover {
+            background-color: #C62828;
         }
 
-        .logo {
-            max-width: 100px;
-            display: block;
-            margin: -5px auto;
-            border-radius: 50%;
+        .login-left img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Membuat logo berbentuk lingkaran */
+            object-fit: cover; /* Memastikan logo tidak terdistorsi */
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
         }
 
-        .welcome-message {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 30px;
-            text-align: center;
+        @media (max-width: 768px) {
+            .login-left h2{
+                font-size: 16px;
+            }
+            .login-left p{
+                font-size: 12px;
+            }
+            .login-left img {
+                width: 50px;
+                height: 50px;
+            }
+            .login-right h3{
+                font-size: 16px;
+                text-align: center;
+                margin-bottom: 0px;
+            }
+            .login-right p{
+                font-size: 12px;
+                text-align: center;
+            }
+            .login-right {
+            padding: 10px;
         }
-
-        .register-link {
-            display: flex;
-            align-items: center;
-        }
-
-        .register-link a {
-            font-size: 14px;
-            color: #4A90E2;
-            text-decoration: none;
-            margin-left: 5px;
-        }
-
-        .register-link a:hover {
-            text-decoration: underline;
-        }
-
-        .toast-message {
-            font-size: 11px;
-            /* Sesuaikan ukuran font sesuai kebutuhan */
         }
     </style>
 </head>
-
 <body>
-    <!-- Menu Lihat View Publik -->
-    <div class="menu-view-publik" style="position: absolute; top: 10px; left: 10px;">
-        <a href="/" style="text-decoration: none; color: #fff; font-size: 14px; font-weight: bold;">
-            &#8592; Lihat View Publik
-        </a>
-    </div>
-    <div class="login-container">
-        <!-- Logo -->
-        <img src="{{ asset('gambar_aset/images/koni.png') }}" alt="Logo KONI Sukoharjo" class="logo"
-            style="height: 100px">
-
-        <!-- Welcome Message -->
-        <h2>Login</h2>
-        <div class="welcome-message">
-            Selamat datang di Sistem Database KONI Sukoharjo
+    <div class="container col-md-8 login-container row shadow p-3 mx-3">
+        <div class="col-md-6 login-left text-center rounded-3">
+            <img src="{{ asset('gambar_aset/images/koni.png') }}" alt="Logo KONI Sukoharjo" class="mb-3 rounded-circle">
+            <h2>Selamat Datang</h2>
+            <p>Akses sistem pengelolaan data KONI Sukoharjo.</p>
         </div>
-
-        <!-- Session Status -->
-        <div class="form-group">
-            <x-auth-session-status class="mb-4" :status="session('status')" />
+        <div class="col-md-6 login-right">
+            <h3 class="mb-2">Masuk ke Sistem</h3>
+            <p class="mb-4">Silakan login untuk melanjutkan.</p>
+            <!-- Integrasi Form Laravel -->
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <!-- Email Address -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">{{ __('Email') }}</label>
+                    <input id="email" type="email" name="email" class="form-control" placeholder="Enter your email" required autofocus autocomplete="off">
+                </div>
+                <!-- Password -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">{{ __('Password') }}</label>
+                    <input id="password" type="password" name="password" class="form-control" placeholder="Enter your password" required autocomplete="off">
+                </div>
+                <!-- Google reCAPTCHA -->
+                <div class="mb-3">
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LfpYJkqAAAAADJ9fO9GwH1IP-pcKvwppoeX2lDh"></div>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary w-100 mb-3">{{ __('Log in') }}</button>
+                <!-- Link to View Publik -->
+                <a href="/" style="text-decoration: none; font-size: 14px; font-weight: bold;">
+                    &#8592; Lihat View Publik
+                </a>
+            </form>
         </div>
-
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-        
-            <!-- Email Address -->
-            <div class="form-group">
-                <label for="email">{{ __('Email') }}</label>
-                <input id="email" type="email" name="email" required autofocus autocomplete="off">
-            </div>
-        
-            <!-- Password -->
-            <div class="form-group">
-                <label for="password">{{ __('Password') }}</label>
-                <input id="password" type="password" name="password" required autocomplete="off">
-            </div>
-        
-            <!-- Google reCAPTCHA -->
-            <div class="form-group">
-                <div class="g-recaptcha" data-sitekey="6LfpYJkqAAAAADJ9fO9GwH1IP-pcKvwppoeX2lDh"></div>
-            </div>
-        
-            <!-- Submit Button -->
-            <button type="submit" class="btn-login">{{ __('Log in') }}</button>
-        </form>
     </div>
+    
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -241,5 +180,4 @@
         </script>
     @endif
 </body>
-
 </html>

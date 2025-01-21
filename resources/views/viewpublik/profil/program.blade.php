@@ -159,7 +159,7 @@
                             <p class="text-muted">
                                 Pelatihan intensif bagi atlet berbakat untuk meningkatkan kemampuan fisik dan mental, mendukung mereka menjadi yang terbaik.
                             </p>
-                            <a href="#" class="btn btn-primary btn-sm">Lihat Detail</a>
+                            <button class="btn btn-primary btn-sm">Program 1</button>
                         </div>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                             <p class="text-muted">
                                 Meningkatkan profesionalisme pelatih melalui pelatihan dan sertifikasi untuk membangun standar kualitas tinggi.
                             </p>
-                            <a href="#" class="btn btn-success text-white btn-sm">Lihat Detail</a>
+                            <button class="btn btn-success text-white btn-sm">Program 2</button>
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                             <p class="text-muted">
                                 Meningkatkan kualitas fasilitas olahraga melalui pembangunan dan renovasi sarana olahraga modern.
                             </p>
-                            <a href="#" class="btn btn-danger btn-sm">Lihat Detail</a>
+                            <button class="btn btn-danger btn-sm">Program 3</button>
                         </div>
                     </div>
                 </div>
@@ -207,7 +207,7 @@
                             <p class="text-muted">
                                 Menyelenggarakan berbagai turnamen lokal untuk mendukung pengembangan atlet dan menjaring bakat baru.
                             </p>
-                            <a href="#" class="btn btn-dark text-white btn-sm">Lihat Detail</a>
+                            <button class="btn btn-dark btn-sm">Program 4</button>
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
                             <p class="text-muted">
                                 Mengedukasi masyarakat tentang pentingnya olahraga dan gaya hidup sehat melalui kampanye dan seminar.
                             </p>
-                            <a href="#" class="btn btn-info text-white btn-sm">Lihat Detail</a>
+                            <button class="btn btn-info text-white btn-sm">Program 5</button>
                         </div>
                     </div>
                 </div>
@@ -239,7 +239,7 @@
                             <p class="text-muted">
                                 Program pembinaan olahraga untuk pelajar dengan bekerja sama dengan sekolah-sekolah di Sukoharjo.
                             </p>
-                            <a href="#" class="btn btn-secondary btn-sm">Lihat Detail</a>
+                            <button class="btn btn-secondary btn-sm">Program 6</button>
                         </div>
                     </div>
                 </div>

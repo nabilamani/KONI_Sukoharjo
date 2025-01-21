@@ -116,7 +116,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    @foreach ($galleries as $gallery)
+                                    @forelse ($galleries as $gallery)
                                         <div class="col-md-4 mb-4">
                                             <div class="card shadow-sm h-100">
                                                 <div class="card-img-wrapper">
@@ -313,7 +313,22 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @endforeach
+                                        @empty
+                                        <div class="card col-12 shadow-sm border-0 bg-light text-center py-5 px-3">
+                                            <div class="card-body">
+                                                <i
+                                                    class="mdi mdi-alert-circle-outline text-warning display-1 mb-3"></i>
+                                                <h4 class="text-dark fw-bold">Tidak Ada Daftar Galeri</h4>
+                                                <p class="text-muted mb-4">
+                                                    Silahkan tambahkan dokumentasi baru untuk menampilkan daftar dokumentasi.
+                                                </p>
+                                                <a href="/galleries/create"
+                                                    class="btn btn-primary text-white px-4 py-2">
+                                                    Tambah Dokumentasi
+                                                </a>
+                                            </div>
+                                        </div>
+                                    @endforelse
                                 </div>
                                 <!-- Pagination Links -->
                                 {{ $galleries->appends(request()->except('page'))->links() }}

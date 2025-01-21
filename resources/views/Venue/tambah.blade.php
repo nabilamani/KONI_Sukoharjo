@@ -42,8 +42,10 @@
         ***********************************-->
         <div class="nav-header">
             <a href="/coba" class="brand-logo">
-                <img class="logo-abbr" src="{{ asset('gambar_aset/images/koni.png') }}" alt="" style="margin-left: 10px; border-radius: 50%;">
-                <span class="fw-bolder d-none d-md-inline" style="margin-left: 10px; font-size: 18px; font-weight: 300">Sistem Kelola KONI</span>
+                <img class="logo-abbr" src="{{ asset('gambar_aset/images/koni.png') }}" alt=""
+                    style="margin-left: 10px; border-radius: 50%;">
+                <span class="fw-bolder d-none d-md-inline"
+                    style="margin-left: 10px; font-size: 18px; font-weight: 300">Sistem Kelola KONI</span>
             </a>
 
             <div class="nav-control">
@@ -81,7 +83,8 @@
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4>Hi, Selamat Datang kembali!</h4>
-                            <p class="mb-1"><span class="text-success">{{ Auth::user()->name }},</span> Anda login sebagai <span class="text-success">{{ Auth::user()->level }}</span></p>
+                            <p class="mb-1"><span class="text-success">{{ Auth::user()->name }},</span> Anda login
+                                sebagai <span class="text-success">{{ Auth::user()->level }}</span></p>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -104,7 +107,8 @@
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="name">Nama Tempat</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="name" class="form-control" placeholder="Masukkan nama tempat..." required />
+                                            <input type="text" name="name" class="form-control"
+                                                placeholder="Masukkan nama tempat..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -114,20 +118,30 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="sportCategorySelect" class="col-sm-2 col-form-label">Pilih Cabor</label>
+                                        <label for="sportCategorySelect" class="col-sm-2 col-form-label">Pilih
+                                            Cabor</label>
                                         <div class="col-sm-4">
-                                          <select id="sportCategorySelect" name="sport_category" class="form-control sport-category-select">
-                                            <option value="" hidden selected disabled>Pilih kategori..</option>
-                                          </select>
-                                        </div>
-                                      </div>
-                                    <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="map">Peta (iframe)</label>
-                                        <div class="col-sm-10">
-                                            <textarea name="map" class="form-control" placeholder="Masukkan iframe peta..." required></textarea>
-                                            <small class="form-text text-muted">Masukkan kode iframe dari Google Maps.</small>
+                                            <select id="sportCategorySelect" name="sport_category"
+                                                class="form-control sport-category-select">
+                                                <option value="" hidden selected disabled>Pilih kategori..
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
+                                    <div class="row mb-3">
+                                        <label class="col-sm-2 col-form-label" for="location_map">Peta (iframe)</label>
+                                        <div class="col-sm-10">
+                                            <textarea id="location_map" name="location_map" class="form-control" placeholder="Masukkan URL src peta Google Maps..."
+                                                required></textarea>
+                                            <small class="form-text text-muted">
+                                                Masukkan hanya URL <code>src</code> dari iframe Google Maps.
+                                                <a href="https://www.google.com/maps" target="_blank"
+                                                    class="text-primary">Buka Google Maps</a> untuk mendapatkan URL.
+                                                <br> Contoh: <code>https://www.google.com/maps/embed?pb=...</code>
+                                            </small>
+                                        </div>
+                                    </div>
+
                                     <div class="row justify-content-end">
                                         <div class="col-sm-10">
                                             <button type="submit" class="btn btn-primary">Tambah Venue</button>
@@ -138,10 +152,10 @@
                         </div>
                     </div>
                 </div>
-                
-                
-                
-                
+
+
+
+
                 <!--**********************************
                     Content body end
                 ***********************************-->
@@ -164,7 +178,7 @@
         <script src="{{ asset('gambar_aset/js/sport-category.js') }}"></script>
 
     </div>
-    
+
 </body>
 
 </html>

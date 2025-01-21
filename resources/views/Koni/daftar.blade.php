@@ -234,6 +234,7 @@
                         @endforelse
                     </div>
                 </div>
+                
 
 
 
@@ -254,6 +255,10 @@
 
 
             </div>
+        </div>
+        @include('layouts/footer')
+    </div>
+            
             <!--**********************************
         Main wrapper end
     ***********************************-->
