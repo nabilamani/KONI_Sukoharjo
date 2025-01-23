@@ -196,7 +196,7 @@
             <h1 class="hero-title text-white fst-italic">#ATLET_KONI_SKH</h1>
             <p class="hero-subtitle">KONI Sukoharjo, wujudkan olahraga yang berprestasi dan menjunjung tinggi
                 sportivitas.</p>
-            <a href="#" class="btn btn-warning">Selengkapnya</a>
+            <a href="#daftar-atlet" class="btn btn-warning">Selengkapnya</a>
         </div>
     </section>
 
@@ -258,7 +258,7 @@
         <div id="chart" class="my-2 p-3 bg-white rounded-sm"></div>
         <hr class="mx-4">
 
-        <h2 class="text-center mb-4 text-white">Daftar Atlet KONI Sukoharjo</h2>
+        <h2 class="text-center mb-4 text-white" id="daftar-atlet">Daftar Atlet KONI Sukoharjo</h2>
         <!-- Tombol untuk mengganti tampilan -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <!-- Tombol untuk mengganti tampilan -->
@@ -522,14 +522,6 @@
     <script>
         AOS.init();
     </script>
-    {{-- <script>
-        document.getElementById('table-wrapper').addEventListener('htmx:afterSwap', function(event) {
-            const responseUrl = event.detail.pathInfo.responsePath;
-            const nextUrl = responseUrl.replace('/api/cari-atlet', '/olahraga/atlet');
-            history.pushState(null, '', nextUrl);
-        });
-    </script> --}}
-    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -564,7 +556,6 @@
     <!-- Required vendors -->
     <script src="{{ asset('gambar_aset/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('gambar_aset/js/quixnav-init.js') }}"></script>
-    <script src="{{ asset('gambar_aset/js/custom.min.js') }}"></script>
 </body>
 
 </html>

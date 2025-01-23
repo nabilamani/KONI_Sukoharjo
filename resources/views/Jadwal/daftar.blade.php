@@ -493,11 +493,9 @@
 
         <!-- Vectormap -->
         <script src="{{ asset('gambar_aset/vendor/raphael/raphael.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/morris/morris.min.js') }}"></script>
 
 
         <script src="{{ asset('gambar_aset/vendor/circle-progress/circle-progress.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/chart.js') }}/Chart.bundle.min.js') }}"></script>
 
         <script src="{{ asset('gambar_aset/vendor/gaugeJS/dist/gauge.min.js') }}"></script>
 
@@ -514,7 +512,6 @@
         <script src="{{ asset('gambar_aset/vendor/jquery.counterup/jquery.counterup.min.js') }}"></script>
 
 
-        <script src="{{ asset('gambar_aset/js/dashboard/dashboard-1.js') }}"></script>
 
         <!-- Datatable -->
         <script src="{{ asset('gambar_aset/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>

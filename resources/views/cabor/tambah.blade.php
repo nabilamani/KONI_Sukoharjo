@@ -100,19 +100,20 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Tambah Data Kategori Olahraga</h5>
+                                <small class="text-muted float-end">* Wajib diisi</small>
                             </div>
                             <div class="card-body">
                                 <form action="/sportcategories" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="nama_cabor">Nama Federasi</label>
+                                        <label class="col-sm-2 col-form-label" for="nama_cabor">Nama Federasi *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="nama_cabor" class="form-control"
                                                 placeholder="Masukkan nama kategori olahraga..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="cabor" class="col-sm-2 col-form-label">Nama Cabor</label>
+                                        <label for="cabor" class="col-sm-2 col-form-label">Nama Cabor *</label>
                                         <div class="col-sm-8">
                                             <input type="text" name="sport_category" class="form-control"
                                                 placeholder="Tulis nama cabor (ex : Sepak Bola)" />
@@ -133,24 +134,24 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="kontak" class="col-sm-2 col-form-label">Kontak</label>
+                                        <label for="kontak" class="col-sm-2 col-form-label">Kontak *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="kontak" class="form-control"
-                                                placeholder="Masukkan kontak (nomor telepon/email)..." />
+                                                placeholder="Masukkan kontak (nomor telepon/email)..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="level" class="col-sm-2 col-form-label">Level</label>
+                                        <label for="level" class="col-sm-2 col-form-label">Level *</label>
                                         <div class="col-sm-4">
                                             <input type="text" name="level" class="form-control"
-                                                placeholder="ex : Pengurus Cabor Sepakbola" />
+                                                placeholder="ex : Pengurus Cabor Sepakbola" required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="gambar">Logo</label>
+                                        <label class="col-sm-2 col-form-label" for="gambar">Logo *</label>
                                         <div class="col-sm-4">
                                             <input class="form-control" type="file" name="logo" id="gambar"
-                                                onchange="previewImage()" />
+                                                onchange="previewImage()" required />
                                             <img id="preview" src="#" alt="Preview logo"
                                                 class="img-fluid mt-3 d-none"
                                                 style="max-height: 200px; border: 1px solid #ddd; padding: 5px;" />

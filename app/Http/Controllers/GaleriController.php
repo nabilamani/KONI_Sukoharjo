@@ -60,13 +60,21 @@ class GaleriController extends Controller
         // Validate the input fields
         $data = $request->validate([
             'title' => ['required', 'string'],
-            'sport_category' => ['required', 'exists:sport_categories,id'],
+            'sport_category' => ['required'],
             'description' => ['nullable', 'string'],
             'date' => ['required', 'date'],
             'location' => ['required', 'string'],
             'media_type' => ['required', 'in:photo,video'],
             'media_path' => ['nullable', 'file', 'mimes:jpeg,png,jpg,mp4,avi,mkv', 'max:20480'], // 20MB max size
         ]);
+
+        if ($request->sport_category === 'all') {
+            $data['sport_category'] = null; // Atur null jika "Semua"
+        } else {
+            $request->validate([
+                'sport_category' => ['exists:sport_categories,id'],
+            ]);
+        }
 
         // Check if a file is uploaded
         if ($request->hasFile('media_path')) {
@@ -121,13 +129,20 @@ class GaleriController extends Controller
         // Validate input
         $data = $request->validate([
             'title' => ['required', 'string'],
-            'sport_category' => ['required', 'exists:sport_categories,id'],
+            'sport_category' => ['required'],
             'description' => ['nullable', 'string'],
             'date' => ['required', 'date'],
             'location' => ['required', 'string'],
-            // 'media_type' => ['required', 'in:photo,video'],
-            // 'media_path' => ['nullable', 'file', 'mimes:jpeg,png,jpg,mp4,avi,mkv', 'max:20480'], // Optional file
         ]);
+
+
+        if ($request->sport_category === 'all') {
+            $data['sport_category'] = null; // Atur null jika "Semua"
+        } else {
+            $request->validate([
+                'sport_category' => ['exists:sport_categories,id'],
+            ]);
+        }
 
         // Update gallery data
         $gallery->update($data);

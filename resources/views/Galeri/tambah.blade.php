@@ -44,7 +44,8 @@
             <a href="/coba" class="brand-logo">
                 <img class="logo-abbr" src="{{ asset('gambar_aset/images/koni.png') }}" alt=""
                     style="margin-left: 10px; border-radius: 50%;">
-                <span class="fw-bolder d-none d-md-inline" style="margin-left: 10px; font-size: 18px; font-weight: 300">Sistem Kelola
+                <span class="fw-bolder d-none d-md-inline"
+                    style="margin-left: 10px; font-size: 18px; font-weight: 300">Sistem Kelola
                     KONI</span>
             </a>
 
@@ -100,23 +101,25 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Tambah Data Galeri</h5>
+                                <small class="text-muted float-end">* Wajib diisi</small>
                             </div>
                             <div class="card-body">
                                 <form action="/galleries" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="title">Judul</label>
+                                        <label class="col-sm-2 col-form-label" for="title">Judul *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="title" class="form-control"
                                                 placeholder="Masukkan judul galeri..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label">Pilih Cabor</label>
+                                        <label class="col-sm-2 col-form-label">Pilih Cabor *</label>
                                         <div class="col-sm-4">
-                                            <select name="sport_category" class="form-control">
+                                            <select name="sport_category" class="form-control" required>
                                                 <option value="" hidden selected disabled>Pilih kategori...
                                                 </option>
+                                                <option value="all">Semua/Koni</option>
                                                 @foreach ($sportCategories as $category)
                                                     <option value="{{ $category->id }}">
                                                         {{ $category->sport_category }}</option>
@@ -131,20 +134,20 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="date">Tanggal</label>
+                                        <label class="col-sm-2 col-form-label" for="date">Tanggal *</label>
                                         <div class="col-sm-4">
                                             <input type="date" name="date" class="form-control" required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="location">Lokasi</label>
+                                        <label class="col-sm-2 col-form-label" for="location">Lokasi *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="location" class="form-control"
                                                 placeholder="Masukkan lokasi galeri..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="media_type">Tipe Media</label>
+                                        <label class="col-sm-2 col-form-label" for="media_type">Tipe Media *</label>
                                         <div class="col-sm-4">
                                             <select name="media_type" id="mediaTypeSelect" class="form-control">
                                                 <option value="" hidden selected disabled>Pilih tipe media...
@@ -155,7 +158,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="media_path">Unggah Media</label>
+                                        <label class="col-sm-2 col-form-label" for="media_path">Unggah Media *</label>
                                         <div class="col-sm-10">
                                             <input type="file" name="media_path" class="form-control"
                                                 accept="image/*,video/*" required />

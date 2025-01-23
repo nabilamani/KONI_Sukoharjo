@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +26,7 @@
             height: 100vh;
             margin: 0;
         }
+
         @keyframes gradientAnimation {
             0% {
                 background-position: 0% 50%;
@@ -60,7 +62,9 @@
         .login-right {
             padding: 40px;
         }
-        .login-right label,input{
+
+        .login-right label,
+        input {
             font-size: 14px;
         }
 
@@ -78,38 +82,49 @@
         .login-left img {
             width: 120px;
             height: 120px;
-            border-radius: 50%; /* Membuat logo berbentuk lingkaran */
-            object-fit: cover; /* Memastikan logo tidak terdistorsi */
+            border-radius: 50%;
+            /* Membuat logo berbentuk lingkaran */
+            object-fit: cover;
+            /* Memastikan logo tidak terdistorsi */
             margin-bottom: 20px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
         }
 
         @media (max-width: 768px) {
-            .login-left h2{
+            .login-left h2 {
                 font-size: 16px;
             }
-            .login-left p{
+
+            .login-left p {
                 font-size: 12px;
             }
+
             .login-left img {
                 width: 50px;
                 height: 50px;
             }
-            .login-right h3{
+
+            .login-right h3 {
                 font-size: 16px;
                 text-align: center;
                 margin-bottom: 0px;
             }
-            .login-right p{
+
+            .login-right p {
                 font-size: 12px;
                 text-align: center;
             }
+
             .login-right {
-            padding: 10px;
-        }
+                padding: 10px;
+            }
+            .forgot {
+                font-size: 8px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container col-md-8 login-container row shadow p-3 mx-3">
         <div class="col-md-6 login-left text-center rounded-3">
@@ -126,12 +141,14 @@
                 <!-- Email Address -->
                 <div class="mb-3">
                     <label for="email" class="form-label">{{ __('Email') }}</label>
-                    <input id="email" type="email" name="email" class="form-control" placeholder="Enter your email" required autofocus autocomplete="off">
+                    <input id="email" type="email" name="email" class="form-control"
+                        placeholder="Enter your email" required autofocus autocomplete="off">
                 </div>
                 <!-- Password -->
                 <div class="mb-3">
                     <label for="password" class="form-label">{{ __('Password') }}</label>
-                    <input id="password" type="password" name="password" class="form-control" placeholder="Enter your password" required autocomplete="off">
+                    <input id="password" type="password" name="password" class="form-control"
+                        placeholder="Enter your password" required autocomplete="off">
                 </div>
                 <!-- Google reCAPTCHA -->
                 <div class="mb-3">
@@ -142,13 +159,20 @@
                 <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary w-100 mb-3">{{ __('Log in') }}</button>
                 <!-- Link to View Publik -->
-                <a href="/" style="text-decoration: none; font-size: 14px; font-weight: bold;">
-                    &#8592; Lihat View Publik
-                </a>
+                <!-- Forgot Password and View Public -->
+                <div class="d-flex justify-content-between">
+                    <a class="forgot" href="https://wa.me/6281234567890"
+                        style="text-decoration: none; font-size: 11px; font-weight: bold; color: red;">
+                        Lupa Password? Hubungi Admin
+                    </a>
+                    <a href="/" style="text-decoration: none; font-size: 14px; font-weight: bold;">
+                        &#8592; Lihat View Publik
+                    </a>
+                </div>
             </form>
         </div>
     </div>
-    
+
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -180,4 +204,5 @@
         </script>
     @endif
 </body>
+
 </html>

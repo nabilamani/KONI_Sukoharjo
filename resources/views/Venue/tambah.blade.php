@@ -100,26 +100,27 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Tambah Data Venue</h5>
+                                <small class="text-muted float-end">* Wajib diisi</small>
                             </div>
                             <div class="card-body">
                                 <form action="/venues" method="post">
                                     @csrf
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="name">Nama Tempat</label>
+                                        <label class="col-sm-2 col-form-label" for="name">Nama Tempat *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="name" class="form-control"
                                                 placeholder="Masukkan nama tempat..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="address">Alamat</label>
+                                        <label class="col-sm-2 col-form-label" for="address">Alamat *</label>
                                         <div class="col-sm-10">
                                             <textarea name="address" class="form-control" placeholder="Masukkan alamat tempat..." required></textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="sportCategorySelect" class="col-sm-2 col-form-label">Pilih
-                                            Cabor</label>
+                                            Cabor *</label>
                                         <div class="col-sm-4">
                                             <select id="sportCategorySelect" name="sport_category"
                                                 class="form-control sport-category-select">
@@ -129,7 +130,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="location_map">Peta (iframe)</label>
+                                        <label class="col-sm-2 col-form-label" for="location_map">Peta (iframe) *</label>
                                         <div class="col-sm-10">
                                             <textarea id="location_map" name="location_map" class="form-control" placeholder="Masukkan URL src peta Google Maps..."
                                                 required></textarea>

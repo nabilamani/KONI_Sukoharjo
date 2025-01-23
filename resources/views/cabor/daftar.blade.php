@@ -103,7 +103,6 @@
                         </ol>
                     </div>
                 </div>
-
                 <!-- row -->
                 <div class="row">
                     <div class="col-12">
@@ -139,7 +138,7 @@
                                                         $SportCategories->perPage() +
                                                     1;
                                             @endphp
-                                            @forelse ($SportCategories as $SportCategory)
+                                            @foreach ($SportCategories as $SportCategory)
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
                                                     <td>
@@ -190,18 +189,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                @empty
-                                                <tr>
-                                                    <td colspan="8" class="text-center">
-                                                        <div
-                                                            class="d-flex justify-content-center align-items-center my-2">
-                                                            <i class="mdi mdi-alert-circle-outline me-2"
-                                                                style="font-size: 20px;"></i>
-                                                            <span class="fs-8">Saat ini belum ada data cabang olahraga.</span>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @endforelse
+                                            @endforeach
                                         </tbody>
                                     </table>
 
@@ -321,118 +309,76 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body p-4">
-                                                        <form action="/edit-sportcategory/{{ $SportCategory->id }}"
-                                                            method="POST" enctype="multipart/form-data">
+                                                        <form action="/edit-sportcategory/{{ $SportCategory->id }}" method="POST" enctype="multipart/form-data">
                                                             @csrf
                                                             @method('PUT')
-
+                                                    
                                                             <div class="row">
                                                                 <!-- Kolom Kiri -->
                                                                 <div class="col-md-6">
                                                                     <div class="form-group mb-3">
-                                                                        <label for="nama_cabor"
-                                                                            class="font-weight-bold text-primary">
-                                                                            <i class="mdi mdi-trophy"></i> Nama
-                                                                            Federasi
+                                                                        <label for="nama_cabor" class="font-weight-bold text-primary">
+                                                                            <i class="mdi mdi-trophy"></i> Nama Federasi
                                                                         </label>
-                                                                        <input type="text"
-                                                                            class="form-control border-primary"
-                                                                            id="nama_cabor" name="nama_cabor"
-                                                                            value="{{ $SportCategory->nama_cabor }}"
-                                                                            required>
+                                                                        <input type="text" class="form-control border-primary" id="nama_cabor" name="nama_cabor" value="{{ $SportCategory->nama_cabor }}" required>
                                                                     </div>
                                                                     <div class="form-group mb-3">
-                                                                        <label for="sport_category"
-                                                                            class="font-weight-bold text-primary">
-                                                                            <i class="mdi mdi-soccer"></i> Cabang
-                                                                            Olahraga
+                                                                        <label for="sport_category" class="font-weight-bold text-primary">
+                                                                            <i class="mdi mdi-soccer"></i> Cabang Olahraga
                                                                         </label>
-                                                                        <input type="text"
-                                                                            class="form-control border-primary"
-                                                                            id="sport_category" name="sport_category"
-                                                                            value="{{ $SportCategory->sport_category }}"
-                                                                            required>
+                                                                        <input type="text" class="form-control border-primary" id="sport_category" name="sport_category" value="{{ $SportCategory->sport_category }}" required>
                                                                     </div>
                                                                     <div class="form-group mb-3">
-                                                                        <label for="puslatcab"
-                                                                            class="font-weight-bold text-primary">
-                                                                            <i class="mdi mdi-train"></i> Pusat Latihan
-                                                                            Cabang
+                                                                        <label for="puslatcab" class="font-weight-bold text-primary">
+                                                                            <i class="mdi mdi-train"></i> Pusat Latihan Cabang
                                                                         </label>
-                                                                        <input type="text"
-                                                                            class="form-control border-primary"
-                                                                            id="puslatcab" name="puslatcab"
-                                                                            value="{{ $SportCategory->puslatcab }}"
-                                                                            required>
+                                                                        <input type="text" class="form-control border-primary" id="puslatcab" name="puslatcab" value="{{ $SportCategory->puslatcab }}" required>
                                                                     </div>
                                                                     <div class="form-group mb-3">
-                                                                        <label for="kontak"
-                                                                            class="font-weight-bold text-primary">
+                                                                        <label for="kontak" class="font-weight-bold text-primary">
                                                                             <i class="mdi mdi-phone"></i> Kontak
                                                                         </label>
-                                                                        <input type="text"
-                                                                            class="form-control border-primary"
-                                                                            id="kontak" name="kontak"
-                                                                            value="{{ $SportCategory->kontak }}"
-                                                                            required>
+                                                                        <input type="text" class="form-control border-primary" id="kontak" name="kontak" value="{{ $SportCategory->kontak }}" required>
                                                                     </div>
                                                                     <div class="form-group mb-3">
-                                                                        <label for="level"
-                                                                            class="font-weight-bold text-primary">
+                                                                        <label for="level" class="font-weight-bold text-primary">
                                                                             <i class="mdi mdi-medal"></i> Level
                                                                         </label>
-                                                                        <input type="text"
-                                                                            class="form-control border-primary"
-                                                                            id="level" name="level"
-                                                                            value="{{ $SportCategory->level }}"
-                                                                            required>
+                                                                        <input type="text" class="form-control border-primary" id="level" name="level" value="{{ $SportCategory->level }}" required>
                                                                     </div>
                                                                 </div>
-
+                                                    
                                                                 <!-- Kolom Kanan -->
                                                                 <div class="col-md-6">
                                                                     <div class="form-group mb-3">
-                                                                        <label for="deskripsi"
-                                                                            class="font-weight-bold text-primary">
-                                                                            <i class="mdi mdi-information-outline"></i>
-                                                                            Deskripsi
+                                                                        <label for="deskripsi" class="font-weight-bold text-primary">
+                                                                            <i class="mdi mdi-information-outline"></i> Deskripsi
                                                                         </label>
                                                                         <textarea class="form-control border-primary" id="deskripsi" name="deskripsi" rows="4" required>{{ $SportCategory->deskripsi }}</textarea>
                                                                     </div>
                                                                     <div class="form-group mb-3">
-                                                                        <label for="logo"
-                                                                            class="font-weight-bold text-primary">
+                                                                        <label for="logo" class="font-weight-bold text-primary">
                                                                             <i class="mdi mdi-image"></i> Logo
                                                                         </label>
-                                                                        <input type="file"
-                                                                            class="form-control-file border-primary"
-                                                                            id="logo" name="logo"
-                                                                            onchange="previewLogo()">
+                                                                        <input type="file" class="form-control-file border-primary" id="logo" name="logo" onchange="previewLogo()">
                                                                         <div class="mt-2">
-                                                                            <img id="logo-preview"
-                                                                                src="{{ $SportCategory->logo ? asset($SportCategory->logo) : '#' }}"
-                                                                                class="img-fluid rounded {{ $SportCategory->logo ? '' : 'd-none' }}"
-                                                                                width="100" alt="Logo Kategori">
-                                                                            <span id="no-logo-text"
-                                                                                class="text-muted {{ $SportCategory->logo ? 'd-none' : '' }}">Tidak
-                                                                                ada Logo</span>
+                                                                            <img id="logo-preview" src="{{ $SportCategory->logo ? asset($SportCategory->logo) : '#' }}" class="img-fluid rounded {{ $SportCategory->logo ? '' : 'd-none' }}" width="100" alt="Logo Kategori">
+                                                                            <span id="no-logo-text" class="text-muted {{ $SportCategory->logo ? 'd-none' : '' }}">Tidak ada Logo</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-
+                                                    
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                                     <i class="mdi mdi-close-circle-outline"></i> Batal
                                                                 </button>
                                                                 <button type="submit" class="btn btn-primary">
-                                                                    <i class="mdi mdi-content-save-outline"></i> Simpan
-                                                                    Perubahan
+                                                                    <i class="mdi mdi-content-save-outline"></i> Simpan Perubahan
                                                                 </button>
                                                             </div>
                                                         </form>
-                                                    </div>
+                                                    </div>                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -486,11 +432,9 @@
 
         <!-- Vectormap -->
         <script src="{{ asset('gambar_aset/vendor/raphael/raphael.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/morris/morris.min.js') }}"></script>
 
 
         <script src="{{ asset('gambar_aset/vendor/circle-progress/circle-progress.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/chart.js') }}/Chart.bundle.min.js') }}"></script>
 
         <script src="{{ asset('gambar_aset/vendor/gaugeJS/dist/gauge.min.js') }}"></script>
 
@@ -506,8 +450,6 @@
         <script src="{{ asset('gambar_aset/vendor/jqvmap/js/jquery.vmap.usa.js') }}"></script>
         <script src="{{ asset('gambar_aset/vendor/jquery.counterup/jquery.counterup.min.js') }}"></script>
 
-
-        <script src="{{ asset('gambar_aset/js/dashboard/dashboard-1.js') }}"></script>
 
         <!-- Datatable -->
         <script src="{{ asset('gambar_aset/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>

@@ -477,11 +477,9 @@
 
         <!-- Vectormap -->
         <script src="{{ asset('gambar_aset/vendor/raphael/raphael.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/morris/morris.min.js') }}"></script>
 
 
         <script src="{{ asset('gambar_aset/vendor/circle-progress/circle-progress.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/chart.js') }}/Chart.bundle.min.js') }}"></script>
 
         <script src="{{ asset('gambar_aset/vendor/gaugeJS/dist/gauge.min.js') }}"></script>
 
@@ -496,9 +494,6 @@
         <script src="{{ asset('gambar_aset/vendor/jqvmap/js/jquery.vmap.min.js') }}"></script>
         <script src="{{ asset('gambar_aset/vendor/jqvmap/js/jquery.vmap.usa.js') }}"></script>
         <script src="{{ asset('gambar_aset/vendor/jquery.counterup/jquery.counterup.min.js') }}"></script>
-
-
-        <script src="{{ asset('gambar_aset/js/dashboard/dashboard-1.js') }}"></script>
 
         <!-- Datatable -->
         <script src="{{ asset('gambar_aset/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
@@ -552,26 +547,7 @@
                 });
             </script>
         @endif
-        <script>
-            const searchInput = document.querySelector('#search-coach');
-            const tableRows = document.querySelectorAll('tbody tr');
-
-            searchInput.addEventListener('input', () => {
-                const searchTerm = searchInput.value.toLowerCase();
-
-                tableRows.forEach(row => {
-                    const rowText = row.textContent.toLowerCase();
-                    const matches = rowText.includes(searchTerm);
-                    row.classList.toggle('hide', !matches); // Hide rows that don't match
-                });
-
-                // Alternate row colors for visible rows
-                const visibleRows = document.querySelectorAll('tbody tr:not(.hide)');
-                visibleRows.forEach((row, index) => {
-                    row.style.backgroundColor = index % 2 === 0 ? 'transparent' : '#f9f9f9';
-                });
-            });
-        </script>
+        
 
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <script>

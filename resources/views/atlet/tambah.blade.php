@@ -101,19 +101,20 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Tambah Data Atlet</h5>
+                                <small class="text-muted float-end">* Wajib diisi</small>
                             </div>
                             <div class="card-body">
                                 <form action="/athletes" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="name">Nama Atlet</label>
+                                        <label class="col-sm-2 col-form-label" for="name">Nama Atlet *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="name" class="form-control"
                                                 placeholder="Masukkan nama atlet..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label">Pilih Cabor</label>
+                                        <label class="col-sm-2 col-form-label">Pilih Cabor *</label>
                                         <div class="col-sm-4">
                                             <select name="sport_category" class="form-control" required>
                                                 <option value="" hidden selected disabled>Pilih kategori...
@@ -124,13 +125,13 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <label class="col-sm-2 col-form-label" for="birth_date">Tanggal Lahir</label>
+                                        <label class="col-sm-2 col-form-label" for="birth_date">Tanggal Lahir *</label>
                                         <div class="col-sm-4">
                                             <input type="date" name="birth_date" class="form-control" required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="gender">Jenis Kelamin</label>
+                                        <label class="col-sm-2 col-form-label" for="gender">Jenis Kelamin *</label>
                                         <div class="col-sm-4">
                                             <select name="gender" class="form-control" required>
                                                 <option value="" hidden selected>Pilih jenis kelamin...</option>
@@ -138,7 +139,7 @@
                                                 <option value="Perempuan">Perempuan</option>
                                             </select>
                                         </div>
-                                        <label class="col-sm-2 col-form-label" for="athlete_type">Tipe Atlet</label>
+                                        <label class="col-sm-2 col-form-label" for="athlete_type">Tipe Atlet *</label>
                                         <div class="col-sm-4">
                                             <select name="athlete_type" class="form-control" required>
                                                 <option value="" hidden selected>Pilih tipe atlet...</option>
@@ -148,18 +149,26 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="weight">Berat Badan (kg)</label>
+                                        <label class="col-sm-2 col-form-label" for="weight">Berat Badan (kg)
+                                            *</label>
                                         <div class="col-sm-10">
                                             <input type="number" name="weight" class="form-control"
                                                 placeholder="Masukkan berat badan atlet..." required />
+                                            <small class="form-text text-muted">
+                                                Berat badan wajib diisi untuk keperluan pengelompokan kategori atlet dan
+                                                perencanaan program pelatihan.
+                                            </small>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="height">Tinggi Badan
-                                            (cm)</label>
+                                            (cm) *</label>
                                         <div class="col-sm-10">
                                             <input type="number" name="height" class="form-control"
                                                 placeholder="Masukkan tinggi badan atlet..." required />
+                                            <small class="form-text text-muted">
+                                                Tinggi badan wajib diisi untuk menentukan klasifikasi atlet pada lomba.
+                                            </small>
                                         </div>
                                     </div>
                                     <div class="row mb-3">

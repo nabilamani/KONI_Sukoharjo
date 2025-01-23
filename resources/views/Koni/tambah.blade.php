@@ -100,6 +100,7 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Tambah Data Struktural KONI</h5>
+                                <small class="text-muted float-end">* Wajib diisi</small>
                             </div>
                             <div class="card-body">
                                 @if (session('error'))
@@ -111,7 +112,7 @@
                                 <form action="/konistructures" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="title">Judul Struktural</label>
+                                        <label class="col-sm-2 col-form-label" for="title">Judul Struktural *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="title" class="form-control"
                                                 placeholder="Masukkan judul struktural..." required />
@@ -119,7 +120,7 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="period">Periode</label>
+                                        <label class="col-sm-2 col-form-label" for="period">Periode *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="period" class="form-control"
                                                 placeholder="Masukkan periode, contoh: 2021-2025" required />
@@ -135,10 +136,11 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="gambar">Foto</label>
+                                        <label class="col-sm-2 col-form-label" for="gambar">Foto *</label>
                                         <div class="col-sm-4">
                                             <input class="form-control" type="file" name="photo" id="gambar"
                                                 onchange="previewImage()" />
+                                            <small class="form-text text-muted">* wajib upload</small>
                                             <img id="preview" src="#" alt="Preview Foto"
                                                 class="img-fluid mt-3 d-none"
                                                 style="max-height: 200px; border: 1px solid #ddd; padding: 5px;" />

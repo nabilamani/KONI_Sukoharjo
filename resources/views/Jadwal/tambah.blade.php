@@ -100,13 +100,14 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Tambah Data Schedule</h5>
+                                <small class="text-muted float-end">* Wajib diisi</small>
                             </div>
                             <div class="card-body">
                                 <form action="/schedules" method="post">
                                     @csrf
                                     <!-- Input untuk Kebutuhan Latihan -->
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="name">Kebutuhan Latihan</label>
+                                        <label class="col-sm-2 col-form-label" for="name">Kebutuhan Latihan *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="name" class="form-control"
                                                 placeholder="Masukkan kebutuhan latihan..." required />
@@ -115,11 +116,11 @@
 
                                     <!-- Input untuk Tanggal dan Waktu -->
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="date">Tanggal Latihan</label>
+                                        <label class="col-sm-2 col-form-label" for="date">Tanggal Latihan *</label>
                                         <div class="col-sm-4">
                                             <input type="date" name="date" class="form-control" required />
                                         </div>
-                                        <label class="col-sm-2 col-form-label" for="time">Waktu Latihan</label>
+                                        <label class="col-sm-2 col-form-label" for="time">Waktu Latihan *</label>
                                         <div class="col-sm-4">
                                             <input type="time" name="time" class="form-control" required />
                                         </div>
@@ -127,9 +128,9 @@
 
                                     <!-- Input untuk Kategori Olahraga -->
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label">Pilih Cabor</label>
+                                        <label class="col-sm-2 col-form-label">Pilih Cabor *</label>
                                         <div class="col-sm-4">
-                                            <select name="sport_category" class="form-control">
+                                            <select name="sport_category" class="form-control" required>
                                                 <option value="" hidden selected disabled>Pilih kategori...
                                                 </option>
                                                 <option value="all">Semua</option> <!-- Opsi Semua -->
@@ -144,7 +145,7 @@
 
                                     <!-- Input untuk Tempat Latihan -->
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="venue_name">Tempat Latihan</label>
+                                        <label class="col-sm-2 col-form-label" for="venue_name">Tempat Latihan *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="venue_name" class="form-control"
                                                 placeholder="Masukkan nama tempat latihan..." required />

@@ -249,7 +249,7 @@
         <div class="row g-4" id="galleryContainer">
             @forelse ($galleries as $gallery)
                 <div class="col-6 col-lg-4 col-md-6 gallery-item"
-                    data-category="{{ $gallery->sportCategory->sport_category }}">
+                    data-category="{{ $gallery->sportCategory->sport_category ?? 'Semua' }}">
                     <div class="card shadow-sm border-0 h-80 overflow-hidden">
                         @if ($gallery->media_type === 'photo')
                             <img src="{{ asset($gallery->media_path) }}" class="card-img-top img-fluid"
@@ -264,7 +264,7 @@
                             <h5 class="card-title fw-bold text-primary">{{ $gallery->title }}</h5>
                             <p class="card-text text-muted small">
                                 <span
-                                    class="badge bg-primary mb-2">{{ $gallery->sportCategory->sport_category }}</span>
+                                    class="badge bg-primary mb-2">{{ $gallery->sportCategory->sport_category ?? 'Semua' }}</span>
                                 <br>
                                 <span class="timestamp">{{ $gallery->date }} | {{ $gallery->location }}</span>
                             </p>
@@ -307,7 +307,7 @@
                                 <p class="mt-4">
                                     <span class="badge bg-primary">
                                         <i
-                                            class="mdi mdi-soccer me-1"></i>{{ $gallery->sportCategory->sport_category }}
+                                            class="mdi mdi-soccer me-1"></i>{{ $gallery->sportCategory->sport_category ?? 'Semua' }}
                                     </span>
                                 </p>
                                 <div class="d-flex align-items-center timestamp">

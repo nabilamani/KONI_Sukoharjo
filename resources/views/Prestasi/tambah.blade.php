@@ -100,21 +100,22 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Tambah Data Prestasi</h5>
+                                <small class="text-muted float-end">* Wajib diisi</small>
                             </div>
                             <div class="card-body">
                                 <form action="/achievements" method="post">
                                     @csrf
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="athlete_name">Nama Atlet</label>
+                                        <label class="col-sm-2 col-form-label" for="athlete_name">Nama Atlet *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="athlete_name" class="form-control"
                                                 placeholder="Masukkan nama atlet..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label">Pilih Cabor</label>
+                                        <label class="col-sm-2 col-form-label">Pilih Cabor *</label>
                                         <div class="col-sm-4">
-                                            <select name="sport_category" class="form-control">
+                                            <select name="sport_category" class="form-control" required>
                                                 <option value="" hidden selected disabled>Pilih kategori...
                                                 </option>
                                                 @foreach ($sportCategories as $category)
@@ -125,7 +126,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="event_type">Jenis Event</label>
+                                        <label class="col-sm-2 col-form-label" for="event_type">Jenis Event *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="event_type" class="form-control"
                                                 placeholder="Masukkan jenis event..." required />
@@ -134,7 +135,7 @@
 
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="region_level">Tingkat
-                                            Wilayah</label>
+                                            Wilayah *</label>
                                         <div class="col-sm-4">
                                             <select id="region_level" name="region_level" class="form-control" required>
                                                 <option value="" hidden selected disabled>Pilih tingkat wilayah...
@@ -148,7 +149,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="rank">Peringkat</label>
+                                        <label class="col-sm-2 col-form-label" for="rank">Peringkat *</label>
                                         <div class="col-sm-4">
                                             <select id="rank" name="rank" class="form-control" required>
                                                 <option value="" hidden selected disabled>Pilih peringkat...
@@ -164,7 +165,7 @@
                                     </div>
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="certificate_date">Tanggal
-                                            Piagam</label>
+                                            Piagam *</label>
                                         <div class="col-sm-4">
                                             <input type="date" name="certificate_date" class="form-control"
                                                 required />

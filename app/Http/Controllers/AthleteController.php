@@ -69,7 +69,7 @@ class AthleteController extends Controller
     public function create()
     {
         $sportCategories = SportCategory::all();
-        return view('Atlet.tambah', compact('sportCategories'));
+        return view('atlet.tambah', compact('sportCategories'));
     }
 
     public function cetakAthlete()

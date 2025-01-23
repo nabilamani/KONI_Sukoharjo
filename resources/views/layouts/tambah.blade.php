@@ -109,107 +109,89 @@
                             <div class="card-body">
                                 <form action="/coaches" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <!-- Nama Pelatih -->
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="basic-default-name">Nama Pelatih *</label>
+                                        <label class="col-sm-2 col-form-label" for="basic-default-name">Nama
+                                            Pelatih *</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="name" class="form-control" id="basic-default-name" 
-                                                placeholder="Masukkan nama pelatih.." required maxlength="50" />
-                                            <small class="form-text text-muted">Maksimal 50 karakter.</small>
+                                            <input type="text" name="name" class="form-control"
+                                                id="basic-default-name" placeholder="Masukkan nama pelatih.." />
                                         </div>
                                     </div>
-                
-                                    <!-- Pilih Cabor -->
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label">Pilih Cabor *</label>
                                         <div class="col-sm-4">
-                                            <select name="sport_category" class="form-control" required>
-                                                <option value="" hidden selected disabled>Pilih kategori...</option>
+                                            <select name="sport_category" class="form-control">
+                                                <option value="" hidden selected disabled>Pilih kategori...
+                                                </option>
                                                 @foreach ($sportCategories as $category)
-                                                    <option value="{{ $category->id }}">{{ $category->sport_category }}</option>
+                                                    <option value="{{ $category->id }}">
+                                                        {{ $category->sport_category }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
-                
-                                    <!-- Jenis Kelamin -->
+
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="gender">Jenis Kelamin *</label>
                                         <div class="col-sm-4">
-                                            <select name="gender" class="form-control" id="gender" required>
-                                                <option value="" hidden selected disabled>Pilih jenis kelamin...</option>
+                                            <select name="gender" class="form-control" required>
+                                                <option value="" hidden selected>Pilih jenis kelamin...</option>
                                                 <option value="Laki-laki">Laki-laki</option>
                                                 <option value="Perempuan">Perempuan</option>
                                             </select>
                                         </div>
                                     </div>
-                
-                                    <!-- Alamat -->
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="basic-default-address">Alamat *</label>
+                                        <label class="col-sm-2 col-form-label"
+                                            for="basic-default-address">Alamat *</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="address" class="form-control" id="basic-default-address" 
-                                                placeholder="Masukkan alamat pelatih.." required maxlength="100" />
-                                            <small class="form-text text-muted">Maksimal 100 karakter.</small>
+                                            <input type="text" name="address" class="form-control"
+                                                id="basic-default-address" placeholder="Masukkan alamat pelatih.." />
                                         </div>
                                     </div>
-                
-                                    <!-- Umur -->
                                     <div class="row mb-3">
                                         <label for="html5-number-input" class="col-md-2 col-form-label">Umur *</label>
                                         <div class="col-md-4">
-                                            <input class="form-control" name="age" type="number" id="html5-number-input" 
-                                                placeholder="Masukkan umur sekarang.." required min="18" max="70" />
-                                            <small class="form-text text-muted">Umur harus antara 18-70 tahun.</small>
+                                            <input class="form-control" name="age" type="number"
+                                                id="html5-number-input" placeholder="Masukkan umur sekarang.." required />
                                         </div>
                                     </div>
-                
-                                    <!-- WhatsApp -->
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="whatsapp">WhatsApp *</label>
                                         <div class="col-sm-4">
-                                            <input type="text" name="whatsapp" class="form-control" id="whatsapp" 
-                                                placeholder="Masukkan nomor WhatsApp.." required pattern="\+?\d{10,15}" />
-                                            <small class="form-text text-muted">Format nomor WhatsApp harus valid (10-15 digit, opsional +).</small>
+                                            <input type="text" name="whatsapp" class="form-control"
+                                                id="whatsapp" placeholder="Masukkan nomor WhatsApp.." required pattern="\+?\d{10,15}" />
+                                                <small class="form-text text-muted">Format nomor WhatsApp harus valid (10-15 digit, opsional +).</small>
                                         </div>
                                     </div>
-                
-                                    <!-- Instagram -->
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="instagram">Instagram</label>
                                         <div class="col-sm-4">
-                                            <input type="text" name="instagram" class="form-control" id="instagram" 
-                                                placeholder="Masukkan username Instagram.." maxlength="30" />
-                                            <small class="form-text text-muted">Opsional, maksimal 30 karakter.</small>
+                                            <input type="text" name="instagram" class="form-control"
+                                                id="instagram" placeholder="Masukkan username Instagram.." />
                                         </div>
                                     </div>
-                
-                                    <!-- Deskripsi -->
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="comment">Deskripsi</label>
                                         <div class="col-sm-10">
-                                            <textarea name="description" class="form-control" rows="3" id="comment" 
-                                                placeholder="Masukkan deskripsi pelatih.. (opsional)" maxlength="200"></textarea>
-                                            <small class="form-text text-muted">Opsional, maksimal 200 karakter.</small>
+                                            <textarea name="description" class="form-control" rows="3" id="comment"
+                                                placeholder="Masukkan deskripsi pelatih.. (opsional)"></textarea>
                                         </div>
                                     </div>
-                
-                                    <!-- Foto -->
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="gambar">Foto *</label>
+                                        <label class="col-sm-2 col-form-label" for="gambar">Foto</label>
                                         <div class="col-sm-4">
-                                            <input class="form-control" type="file" name="photo" id="gambar" 
-                                                required accept="image/*" onchange="previewImage()" />
-                                            <img id="preview" src="#" alt="Preview Foto" 
-                                                class="img-fluid mt-3 d-none" 
+                                            <input class="form-control" type="file" name="photo" id="gambar"
+                                                onchange="previewImage()" />
+                                            <img id="preview" src="#" alt="Preview Foto"
+                                                class="img-fluid mt-3 d-none"
                                                 style="max-height: 200px; border: 1px solid #ddd; padding: 5px;" />
                                         </div>
                                     </div>
-                
-                                    <!-- Submit -->
                                     <div class="row justify-content-end">
                                         <div class="col-sm-10">
-                                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" name="submit"
+                                                class="btn btn-primary">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -217,7 +199,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!--**********************************
             Content body end
         ***********************************-->
@@ -248,11 +229,8 @@
 
         <!-- Vectormap -->
         <script src="{{ asset('gambar_aset/vendor/raphael/raphael.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/morris/morris.min.js') }}"></script>
-
 
         <script src="{{ asset('gambar_aset/vendor/circle-progress/circle-progress.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/chart.js') }}/Chart.bundle.min.js') }}"></script>
 
         <script src="{{ asset('gambar_aset/vendor/gaugeJS/dist/gauge.min.js') }}"></script>
 
@@ -269,7 +247,6 @@
         <script src="{{ asset('gambar_aset/vendor/jquery.counterup/jquery.counterup.min.js') }}"></script>
 
 
-        <script src="{{ asset('gambar_aset/js/dashboard/dashboard-1.js') }}"></script>
 
         <!-- Datatable -->
         <script src="{{ asset('gambar_aset/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>

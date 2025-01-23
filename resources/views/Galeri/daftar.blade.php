@@ -136,7 +136,7 @@
                                                     <h5 class="card-title">{{ $gallery->title }}</h5>
                                                     <p class="card-text">
                                                         <strong>Kategori Olahraga :</strong>
-                                                        {{ $gallery->SportCategory->sport_category }}<br>
+                                                        {{ $gallery->SportCategory->sport_category ?? 'Semua' }}<br>
                                                         <strong>Tanggal :</strong> {{ $gallery->date }}<br>
                                                         <strong>Lokasi :</strong> {{ $gallery->location }}
                                                     </p>
@@ -201,7 +201,7 @@
                                                                 <div class="col-4"><strong>Kategori Olahraga</strong>
                                                                 </div>
                                                                 <div class="col-8">:
-                                                                    {{ $gallery->SportCategory->sport_category }}
+                                                                    {{ $gallery->SportCategory->sport_category ?? 'Semua' }}
                                                                 </div>
                                                             </div>
                                                             <div class="row mb-3">
@@ -272,6 +272,7 @@
                                                                     <option value="" disabled>
                                                                         Pilih Cabang Olahraga</option>
                                                                     @foreach ($sportCategories as $category)
+                                                                        <option value="all">Semua</option>
                                                                         <option value="{{ $category->id }}"
                                                                             {{ $gallery->sport_category == $category->id ? 'selected' : '' }}>
                                                                             {{ $category->sport_category }}
@@ -313,14 +314,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        @empty
+                                    @empty
                                         <div class="card col-12 shadow-sm border-0 bg-light text-center py-5 px-3">
                                             <div class="card-body">
                                                 <i
                                                     class="mdi mdi-alert-circle-outline text-warning display-1 mb-3"></i>
                                                 <h4 class="text-dark fw-bold">Tidak Ada Daftar Galeri</h4>
                                                 <p class="text-muted mb-4">
-                                                    Silahkan tambahkan dokumentasi baru untuk menampilkan daftar dokumentasi.
+                                                    Silahkan tambahkan dokumentasi baru untuk menampilkan daftar
+                                                    dokumentasi.
                                                 </p>
                                                 <a href="/galleries/create"
                                                     class="btn btn-primary text-white px-4 py-2">
@@ -380,11 +382,8 @@
 
         <!-- Vectormap -->
         <script src="{{ asset('gambar_aset/vendor/raphael/raphael.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/morris/morris.min.js') }}"></script>
-
 
         <script src="{{ asset('gambar_aset/vendor/circle-progress/circle-progress.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/chart.js') }}/Chart.bundle.min.js') }}"></script>
 
         <script src="{{ asset('gambar_aset/vendor/gaugeJS/dist/gauge.min.js') }}"></script>
 
@@ -399,9 +398,6 @@
         <script src="{{ asset('gambar_aset/vendor/jqvmap/js/jquery.vmap.min.js') }}"></script>
         <script src="{{ asset('gambar_aset/vendor/jqvmap/js/jquery.vmap.usa.js') }}"></script>
         <script src="{{ asset('gambar_aset/vendor/jquery.counterup/jquery.counterup.min.js') }}"></script>
-
-
-        <script src="{{ asset('gambar_aset/js/dashboard/dashboard-1.js') }}"></script>
 
         <!-- Datatable -->
         <script src="{{ asset('gambar_aset/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>

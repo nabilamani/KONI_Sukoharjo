@@ -113,6 +113,7 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Tambah Data User</h5>
+                                <small class="text-muted float-end">* Wajib diisi</small>
                             </div>
                             <div class="card-body">
                                 @if ($errors->any())
@@ -128,21 +129,21 @@
                                 <form action="/users" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="name">Nama</label>
+                                        <label class="col-sm-2 col-form-label" for="name">Nama *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="name" class="form-control"
                                                 placeholder="Masukkan nama..." required>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="email">Email</label>
+                                        <label class="col-sm-2 col-form-label" for="email">Email *</label>
                                         <div class="col-sm-10">
                                             <input type="email" name="email" class="form-control"
                                                 placeholder="Masukkan email..." autocomplete="off" required>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="password">Password</label>
+                                        <label class="col-sm-2 col-form-label" for="password">Password *</label>
                                         <div class="col-sm-10">
                                             <input type="password" name="password" class="form-control"
                                                 placeholder="Masukkan password..." autocomplete="off" required>
@@ -150,16 +151,16 @@
                                     </div>
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="password_confirmation">Konfirmasi
-                                            Password</label>
+                                            Password *</label>
                                         <div class="col-sm-10">
                                             <input type="password" name="password_confirmation" class="form-control"
                                                 placeholder="Konfirmasi password..." required>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="levelSelect" class="col-sm-2 col-form-label">Level</label>
+                                        <label for="levelSelect" class="col-sm-2 col-form-label">Level *</label>
                                         <div class="col-sm-4">
-                                            <select id="levelSelect" name="level" class="form-control">
+                                            <select id="levelSelect" name="level" class="form-control" required>
                                                 <option value="" hidden selected disabled>Pilih level...</option>
                                                 @foreach ($sportCategories as $id => $level)
                                                     <option value="{{ $level }}">{{ $level }}</option>

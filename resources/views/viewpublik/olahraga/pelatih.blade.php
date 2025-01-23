@@ -428,13 +428,6 @@
         // Memuat tampilan saat halaman dimuat
         document.addEventListener('DOMContentLoaded', loadView);
     </script>
-    <script>
-        document.getElementById('table-wrapper').addEventListener('htmx:afterSwap', function(event) {
-            const responseUrl = event.detail.pathInfo.responsePath;
-            const nextUrl = responseUrl.replace('/api/cari-pelatih', '/olahraga/pelatih');
-            history.pushState(null, '', nextUrl);
-        });
-    </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
@@ -442,7 +435,6 @@
     <!-- Required vendors -->
     <script src="{{ asset('gambar_aset/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('gambar_aset/js/quixnav-init.js') }}"></script>
-    <script src="{{ asset('gambar_aset/js/custom.min.js') }}"></script>
 
 </body>
 

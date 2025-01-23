@@ -212,6 +212,7 @@ class RefereeController extends Controller
         // Query pencarian berdasarkan nama atau cabang olahraga
         $referees = Referee::where('name', 'like', '%' . $search . '%')
             ->orWhere('sport_category', 'like', '%' . $search . '%')
+            ->orderBy('created_at', 'asc')
             ->paginate(12);
 
         return view('viewpublik.olahraga.wasit', compact('referees', 'search'));

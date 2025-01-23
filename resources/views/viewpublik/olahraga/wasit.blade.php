@@ -197,7 +197,7 @@
             @forelse ($referees as $referee)
                 <div class="col-6 col-sm-4 col-md-3">
                     <div class="card referee-card">
-                        <img src="{{ $referee->photo ? asset($referee->photo) : 'https://via.placeholder.com/300x200' }}"
+                        <img src="{{ $referee->photo ? asset($referee->photo) : asset('/gambar_aset/images/foto person.jpeg') }}"
                             alt="{{ $referee->name }}" class="referee-photo">
                         <div class="referee-details text-center p-3">
                             <h6 class="text-dark mb-1">{{ $referee->name }}</h6>
@@ -242,7 +242,7 @@
                             <td>{{ $referee->name }}</td>
                             <td>{{ $referee->sportCategory->sport_category }}</td>
                             <td>
-                                <img src="{{ $referee->photo ? asset($referee->photo) : 'https://via.placeholder.com/100x100' }}"
+                                <img src="{{ $referee->photo ? asset($referee->photo) : asset('/gambar_aset/images/foto person.jpeg') }}"
                                     alt="{{ $referee->name }}" class="img-thumbnail" width="100">
                             </td>
                             <td>
@@ -286,7 +286,7 @@
                             <div class="row">
                                 <!-- Kolom kiri: Foto Wasit -->
                                 <div class="col-12 col-md-4 mb-3 mb-md-0 text-center">
-                                    <img src="{{ $referee->photo ? asset($referee->photo) : 'https://via.placeholder.com/300x200' }}"
+                                    <img src="{{ $referee->photo ? asset($referee->photo) : asset('/gambar_aset/images/foto person.jpeg') }}"
                                         alt="Foto Wasit" class="img-fluid rounded"
                                         style="max-height: 300px; object-fit: cover;">
                                 </div>
@@ -401,7 +401,6 @@
     <!-- Required vendors -->
     <script src="{{ asset('gambar_aset/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('gambar_aset/js/quixnav-init.js') }}"></script>
-    <script src="{{ asset('gambar_aset/js/custom.min.js') }}"></script>
 
 </body>
 

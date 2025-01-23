@@ -149,11 +149,12 @@
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th>No</th>
-                                                <th>ID</th>
                                                 <th>Nama Atlet</th>
                                                 <th>Cabang Olahraga</th>
                                                 <th>Jenis Event</th>
-                                                <th>Deskripsi</th>
+                                                <th>Rangking</th>
+                                                <th>Tingkat Wilayah</th>
+                                                <th>Tanggal Juara</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -164,11 +165,12 @@
                                             @forelse ($achievements as $achievement)
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
-                                                    <td>{{ $achievement->id }}</td>
                                                     <td>{{ $achievement->athlete_name }}</td>
                                                     <td>{{ $achievement->sportCategory->sport_category }}</td>
                                                     <td>{{ $achievement->event_type }}</td>
-                                                    <td>{{ $achievement->description }}</td>
+                                                    <td>{{ $achievement->rank }}</td>
+                                                    <td>{{ $achievement->region_level }}</td>
+                                                    <td>{{ $achievement->certificate_date }}</td>
                                                     <td>
                                                         <div class="dropdown">
                                                             <button
@@ -498,11 +500,9 @@
 
         <!-- Vectormap -->
         <script src="{{ asset('gambar_aset/vendor/raphael/raphael.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/morris/morris.min.js') }}"></script>
 
 
         <script src="{{ asset('gambar_aset/vendor/circle-progress/circle-progress.min.js') }}"></script>
-        <script src="{{ asset('gambar_aset/vendor/chart.js') }}/Chart.bundle.min.js') }}"></script>
 
         <script src="{{ asset('gambar_aset/vendor/gaugeJS/dist/gauge.min.js') }}"></script>
 
@@ -519,7 +519,6 @@
         <script src="{{ asset('gambar_aset/vendor/jquery.counterup/jquery.counterup.min.js') }}"></script>
 
 
-        <script src="{{ asset('gambar_aset/js/dashboard/dashboard-1.js') }}"></script>
 
         <!-- Datatable -->
         <script src="{{ asset('gambar_aset/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>

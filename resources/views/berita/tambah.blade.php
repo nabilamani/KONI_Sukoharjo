@@ -138,21 +138,22 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Tambah Berita</h5>
+                                <small class="text-muted float-end">* Wajib diisi</small>
                             </div>
                             <div class="card-body">
                                 <form action="/beritas" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="judul_berita">Judul Berita</label>
+                                        <label class="col-sm-2 col-form-label" for="judul_berita">Judul Berita *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="judul_berita" class="form-control"
                                                 placeholder="Masukkan judul berita..." required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label">Pilih kategori</label>
+                                        <label class="col-sm-2 col-form-label">Pilih kategori *</label>
                                         <div class="col-sm-4">
-                                            <select name="sport_category" class="form-control">
+                                            <select name="sport_category" class="form-control" required>
                                                 <option value="" hidden selected disabled>Pilih kategori...
                                                 </option>
                                                 <option value="all">Semua/Koni</option>
@@ -165,14 +166,14 @@
                                     </div>
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="tanggal_waktu">Tanggal dan
-                                            Waktu</label>
+                                            Waktu *</label>
                                         <div class="col-sm-4">
                                             <input type="date" name="tanggal_waktu" class="form-control" required />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label class="col-sm-2 col-form-label" for="lokasi_peristiwa">Lokasi
-                                            Peristiwa</label>
+                                            Peristiwa *</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="lokasi_peristiwa" class="form-control"
                                                 placeholder="Masukkan lokasi peristiwa..." required />
@@ -180,7 +181,7 @@
                                     </div>
                                     <div class="row mb-3"> 
                                         <label class="col-sm-2 col-form-label" for="isi_berita">Isi
-                                            Berita</label>
+                                            Berita *</label>
                                         <div class="col -sm-10">
                                             <textarea   id="editor" name="isi_berita" class="" placeholder="Masukkan isi berita..." rows="5" ></textarea>
                                         </div>
@@ -195,10 +196,10 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="gambar">Foto</label>
+                                        <label class="col-sm-2 col-form-label" for="gambar">Foto *</label>
                                         <div class="col-sm-4">
                                             <input class="form-control" type="file" name="photo" id="gambar"
-                                                onchange="previewImage()" />
+                                                onchange="previewImage()" required/>
                                             <img id="preview" src="#" alt="Preview Foto"
                                                 class="img-fluid mt-3 d-none"
                                                 style="max-height: 200px; border: 1px solid #ddd; padding: 5px;" />
